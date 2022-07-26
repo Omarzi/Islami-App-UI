@@ -3,8 +3,9 @@ import 'package:islami_app_ui/sura_details/sura_details.dart';
 
 class SuraNameItem extends StatelessWidget {
   String text;
+  int index;
 
-  SuraNameItem(this.text);
+  SuraNameItem(this.text, this.index);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class SuraNameItem extends StatelessWidget {
           Navigator.pushNamed(
             context,
             SuraDetails.routeName,
-            arguments: SuraDetailsArgs(text),
+            arguments: SuraDetailsArgs(text, index),
           );
         },
         child: Text(

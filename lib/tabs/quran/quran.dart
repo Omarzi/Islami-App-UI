@@ -143,6 +143,7 @@ class QuranScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               return SuraNameItem(
                 SuraName[index],
+                index,
               );
             },
           ),
