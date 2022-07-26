@@ -23,48 +23,50 @@ class _SuraDetailsState extends State<SuraDetails> {
       loadFile(SuraDetailsArg.index);
     }
 
-    return Stack(
-      children: [
-        Image.asset(
-          "assets/images/main_background.png",
-          width: double.infinity,
-          height: double.infinity,
-          fit: BoxFit.fill,
-        ),
-        Scaffold(
-          backgroundColor: Colors.transparent,
-          appBar: AppBar(
-            centerTitle: true,
-            title: Text(
-              SuraDetailsArg.SuraName,
-              style: Theme.of(context).textTheme.headline1,
-            ),
+    return SafeArea(
+      child: Stack(
+        children: [
+          Image.asset(
+            "assets/images/main_background.png",
+            width: double.infinity,
+            height: double.infinity,
+            fit: BoxFit.fill,
           ),
-          body: verses.isEmpty
-              ? Center(
-                  child: CircularProgressIndicator(
-                    color: Theme.of(context).primaryColor,
-                  ),
-                )
-              : ListView.separated(
-                  separatorBuilder: (context, index) {
-                    return Container(
-                      margin: const EdgeInsets.symmetric(
-                        horizontal: 50,
-                      ),
+          Scaffold(
+            backgroundColor: Colors.transparent,
+            appBar: AppBar(
+              centerTitle: true,
+              title: Text(
+                SuraDetailsArg.SuraName,
+                style: Theme.of(context).textTheme.headline1,
+              ),
+            ),
+            body: verses.isEmpty
+                ? Center(
+                    child: CircularProgressIndicator(
                       color: Theme.of(context).primaryColor,
-                      height: 1,
-                    );
-                  },
-                  itemCount: verses.length,
-                  itemBuilder: (context, index) {
-                    return SuraDetailsItem(
-                      verses[index].toString(),
-                    );
-                  },
-                ),
-        ),
-      ],
+                    ),
+                  )
+                : ListView.separated(
+                    separatorBuilder: (context, index) {
+                      return Container(
+                        margin: const EdgeInsets.symmetric(
+                          horizontal: 50,
+                        ),
+                        color: Theme.of(context).primaryColor,
+                        height: 1,
+                      );
+                    },
+                    itemCount: verses.length,
+                    itemBuilder: (context, index) {
+                      return SuraDetailsItem(
+                        verses[index].toString(),
+                      );
+                    },
+                  ),
+          ),
+        ],
+      ),
     );
   }
 
