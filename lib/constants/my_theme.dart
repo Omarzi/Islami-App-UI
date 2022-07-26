@@ -17,10 +17,12 @@ class MyThemeData {
         fontWeight: FontWeight.w400,
       ),
     ),
-    appBarTheme: const AppBarTheme(
-      backgroundColor: Colors.transparent,
-      elevation: 0,
-    ),
+    appBarTheme: AppBarTheme(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: IconThemeData(
+          color: blackColor,
+        )),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       selectedItemColor: blackColor,
       unselectedItemColor: Colors.white,

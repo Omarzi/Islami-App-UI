@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app_ui/sura_details/sura_details.dart';
 
 class SuraNameItem extends StatelessWidget {
   String text;
@@ -10,7 +11,13 @@ class SuraNameItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.pushNamed(
+            context,
+            SuraDetails.routeName,
+            arguments: SuraDetailsArgs(text),
+          );
+        },
         child: Text(
           text,
           textAlign: TextAlign.center,
