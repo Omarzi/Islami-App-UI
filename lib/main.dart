@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app_ui/constants/my_theme.dart';
 import 'package:islami_app_ui/home_layout.dart';
 
 void main() {
@@ -16,6 +17,8 @@ class MyApp extends StatelessWidget {
       routes: {
         HomeLayout.routName: (context) => HomeLayout(),
       },
+      theme: MyThemeData.lightTheme,
+      darkTheme: MyThemeData.darkTheme,
     );
   }
 }
