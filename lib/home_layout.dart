@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app_ui/tabs/ahadeth.dart';
+import 'package:islami_app_ui/tabs/ahadeth/ahadeth.dart';
 import 'package:islami_app_ui/tabs/quran/quran.dart';
 import 'package:islami_app_ui/tabs/radio.dart';
 import 'package:islami_app_ui/tabs/tasbeh.dart';
@@ -16,9 +16,9 @@ class _HomeLayoutState extends State<HomeLayout> {
 
   List<Widget> tabs = [
     QuranScreen(),
+    AhadethScreen(),
     TasbehScreen(),
     RadioScreen(),
-    AhadethScreen(),
   ];
 
   @override
@@ -64,6 +64,14 @@ class _HomeLayoutState extends State<HomeLayout> {
                   BottomNavigationBarItem(
                     icon: ImageIcon(
                       AssetImage(
+                        "assets/images/quran-quran-svgrepo-com.png",
+                      ),
+                    ),
+                    label: "Ahadeth",
+                  ),
+                  BottomNavigationBarItem(
+                    icon: ImageIcon(
+                      AssetImage(
                         "assets/images/sebha.png",
                       ),
                     ),
@@ -76,14 +84,6 @@ class _HomeLayoutState extends State<HomeLayout> {
                       ),
                     ),
                     label: "Radio",
-                  ),
-                  BottomNavigationBarItem(
-                    icon: ImageIcon(
-                      AssetImage(
-                        "assets/images/quran-quran-svgrepo-com.png",
-                      ),
-                    ),
-                    label: "Ahadeth",
                   ),
                 ],
               ),

@@ -129,24 +129,30 @@ class QuranScreen extends StatelessWidget {
           ),
         ),
         Expanded(
-          child: ListView.separated(
-            separatorBuilder: (context, index) {
-              return Container(
-                margin: const EdgeInsets.symmetric(
-                  horizontal: 50,
+          child: SuraName.isEmpty
+              ? Center(
+                  child: CircularProgressIndicator(
+                    color: Theme.of(context).primaryColor,
+                  ),
+                )
+              : ListView.separated(
+                  separatorBuilder: (context, index) {
+                    return Container(
+                      margin: const EdgeInsets.symmetric(
+                        horizontal: 50,
+                      ),
+                      color: Theme.of(context).primaryColor,
+                      height: 1,
+                    );
+                  },
+                  itemCount: SuraName.length,
+                  itemBuilder: (context, index) {
+                    return SuraNameItem(
+                      SuraName[index],
+                      index,
+                    );
+                  },
                 ),
-                color: Theme.of(context).primaryColor,
-                height: 1,
-              );
-            },
-            itemCount: SuraName.length,
-            itemBuilder: (context, index) {
-              return SuraNameItem(
-                SuraName[index],
-                index,
-              );
-            },
-          ),
         ),
       ],
     );
