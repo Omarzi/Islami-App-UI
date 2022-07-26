@@ -16,9 +16,9 @@ class _HomeLayoutState extends State<HomeLayout> {
 
   List<Widget> tabs = [
     QuranScreen(),
+    AhadethScreen(),
     TasbehScreen(),
     RadioScreen(),
-    AhadethScreen(),
   ];
 
   @override
@@ -64,6 +64,14 @@ class _HomeLayoutState extends State<HomeLayout> {
                   BottomNavigationBarItem(
                     icon: ImageIcon(
                       AssetImage(
+                        "assets/images/quran-quran-svgrepo-com.png",
+                      ),
+                    ),
+                    label: "Ahadeth",
+                  ),
+                  BottomNavigationBarItem(
+                    icon: ImageIcon(
+                      AssetImage(
                         "assets/images/sebha.png",
                       ),
                     ),
@@ -76,14 +84,6 @@ class _HomeLayoutState extends State<HomeLayout> {
                       ),
                     ),
                     label: "Radio",
-                  ),
-                  BottomNavigationBarItem(
-                    icon: ImageIcon(
-                      AssetImage(
-                        "assets/images/quran-quran-svgrepo-com.png",
-                      ),
-                    ),
-                    label: "Ahadeth",
                   ),
                 ],
               ),
